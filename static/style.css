@@ -31,3 +31,17 @@ li {
     justify-content: center;
     align-items: center;
 }
+
+.book__form-box {
+    border: gray solid 6px;
+    width: 300px;
+    height: 525px;
+    border-radius: 20px;
+}
+
+.book__wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 30px 50px 10px 50px;
+}

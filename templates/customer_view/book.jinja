@@ -1,0 +1,29 @@
+{% extends 'base.jinja' %}
+{% block content %}
+
+<body>
+    <main class="book">
+        <section class="book__wrapper">
+            <div class="book__left">
+                <h1 class="book__title">Book a table with us</h1>
+            </div>
+            <div class="book__form-box">
+                <h2 class="form-box__title">Book Here</h2>
+                <form>
+                    <input type="text" name="booking_name" id="booking_name" placeholder="Booking Name" required>
+                    <input type="number" name="number_of_guests" id="number_of_guests" placeholder="Number of Guests"
+                        required>
+                    <input type="email" name="email" id="email" placeholder="Email" required>
+                    <input type="date" name="date" id="date" placeholder="date" required>
+                    <select name="table_select" id="table_select">
+                        <option name="select_table" id="select_table" selected disabled> Select Table</option>
+                        {% for table in tables %}
+                        <option name="select_table" id="select_table">{{ table.name }}</option>
+                        {% endfor %}
+                    </select>
+                </form>
+            </div>
+        </section>
+    </main>
+</body>
+{% endblock content %}

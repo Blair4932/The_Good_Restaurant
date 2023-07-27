@@ -11,4 +11,5 @@ def index():
 
 @restaurant_blueprint.route('/the_good_restaurant/book')
 def show_book():
-    return render_template('book.jinja')
+    tables = Table.query.all()
+    return render_template('/customer_view/book.jinja', tables=tables)
