@@ -5,24 +5,77 @@
 
 .header__wrapper {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: flex-start;
+    margin-left: 30px;
 }
 
 li {
     list-style: none;
 }
 
+
 .nav-bar__list {
     display: flex;
     justify-content: space-evenly;
+    align-items: center;
     gap: 120px;
     margin-top: 50px;
 }
 
-.hero__title {
-    font-size: 60px;
+.nav-bar__item__li {
+    color: rgb(255, 255, 255);
+    font-family: Palatino, URW Palladio L, serif;
+    text-decoration: none;
+}
+
+.nav-bar__item__li a:hover {
+    cursor: pointer;
+    color: rgb(174, 93, 93);
+}
+
+.logo {
+    font-family: Brush Script MT, Brush Script Std, cursive;;
+    color: white;
+    font-size: 40px;
+    text-shadow: black 10px 5px 7px;
+}
+
+body {
+    background-image: url(https://cdn.discordapp.com/attachments/931859564863823882/1134413208401219604/vegetables-set-left-black-slate.jpg);
+    background-size: cover;
+}
+
+
+.hero__welcome {
+    color:rgb(255, 255, 255);
+    font-family: Brush Script MT, Brush Script Std, cursive;
     margin-top: 70px;
+}
+
+.hero__title {
+    margin-top: 15px;
+    font-size: 60px;
     text-align: center;
+    color: rgb(188, 125, 7) ;
+    font-family: Palatino, URW Palladio L, serif;
+    text-shadow: rgb(40, 40, 40) 2px 2px 10px;
+}
+
+.book-now-btn {
+    margin-top: 10px;
+    border: rgb(188, 125, 7) 3px solid;
+    background-color: transparent;
+    border-radius: 10px;
+    color: white;
+    font-family: Palatino, URW Palladio L, serif;
+    font-weight: bolder;
+    padding: 8px 20px;
+}
+
+.book-now-btn:hover {
+    cursor: pointer;
+    box-shadow: rgb(17, 17, 17) 10px 5px 10px;
+    background-color: rgba(243, 243, 243, 0.09);
 }
 
 .hero__wrapper {
