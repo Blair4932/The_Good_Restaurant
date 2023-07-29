@@ -13,6 +13,14 @@ li {
     list-style: none;
 }
 
+input {
+    text-align: center;
+    border: none;
+    border-radius: 3px;
+    padding: 3px;
+    width: 120px;
+}
+
 
 .nav-bar__list {
     display: flex;
@@ -94,7 +102,82 @@ body {
 
 .book__wrapper {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: space-between;
     margin: 30px 50px 10px 50px;
+}
+
+.book__img {
+    height: 250px;
+    border: white solid 2px;
+
+}
+
+.book__img-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.book__img__text {
+    color: white;
+    margin-top: 5px;
+    font-family: Palatino, URW Palladio L, serif;
+}
+
+.book__title {
+    margin-bottom: 20px;
+    font-family: Palatino, URW Palladio L, serif;
+    color: rgb(188, 125, 7) ;
+    font-weight: bolder;
+    text-shadow: black 5px 5px 10px;
+    font-size: 30px;
+    text-decoration: underline;
+}
+
+.book__left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+select {
+    background-color: transparent;
+}
+
+#slots {
+    height: 44px;
+    border: none;
+    overflow: hidden;
+}
+#slots ::-moz-focus-inner {
+    border: 0;
+}
+#slots :focus {
+    outline: none;
+}
+#slots option {
+    width: 60px;
+    font-size: 1.2em;
+    padding: 10px 0;
+    text-align: center;
+    margin-right: 20px;
+    display: inline-block;
+    cursor: pointer;
+    border: gray solid 3px;
+    border-radius: 5px;
+    color: black;
+    background-color: white;
+}
+
+.select_slot {
+    font-size: 20px;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.submit-btn {
+    justify-self: center;
 }
