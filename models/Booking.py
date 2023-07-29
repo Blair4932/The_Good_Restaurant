@@ -6,9 +6,12 @@ class Booking(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     booking_name = db.Column(db.String(64))
     email = db.Column(db.String(64))
+    phone_number = db.Column(db.String(64))
     number_of_guests = db.Column(db.Integer)
-    date = db.Column = (db.String(64))
-    tables = db.relationship('Table', backref='booking')
+    booking_time = db.Column(db.DateTime)
+    accepted = db.Column(db.Boolean)
+    tableid = db.Column(db.Integer, db.ForeignKey('tables.id'))
+    slotid = db.Column(db.Integer, db.ForeignKey('slots.id'))
 
     def __repr__(self):
         return f'<Booking {self.id}: {self.booking_name}>'

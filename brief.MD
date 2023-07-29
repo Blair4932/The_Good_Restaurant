@@ -9,5 +9,4 @@
 
 - Add the ability to filter bookings by date
 - Add a Staff class that accepts only staff login info to reach the staff view page
-  (or a hard coded log in) (potentially have the ability to add new staff members + logins
-  )
+  (or a hard coded log in) (potentially have the ability to add new staff members + logins)

@@ -8,7 +8,7 @@ app.config["SQLALCHEMY_DATABASE_URI"] = "postgresql://blairscott@localhost:5432/
 db = SQLAlchemy(app)
 migrate = Migrate(app, db)
 
-from models import Table, Booking
+from models import Table, Booking, Slot
 from controllers.resaurant_controller import restaurant_blueprint
 
 app.register_blueprint(restaurant_blueprint)
