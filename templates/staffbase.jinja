@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Good Restaurant</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+<header class="staff-header">
+    <div class="staff-header__wrapper">
+        <ul>
+            <li>
+                <div class="staff-logo">
+                    <span>T.G.R</span>
+                </div>
+            </li>
+            <li>
+                <div class="logout">
+                    <a>Logout</a>
+                </div>
+            </li>
+        </ul>
+    </div>
+</header>
+<div>{% block content %}
+
+    {% endblock content %}</div>

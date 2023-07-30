@@ -8,7 +8,7 @@ class Booking(db.Model):
     email = db.Column(db.String(64))
     phone_number = db.Column(db.String(64))
     number_of_guests = db.Column(db.Integer)
-    booking_time = db.Column(db.DateTime)
+    booking_date = db.Column(db.DateTime)
     accepted = db.Column(db.Boolean)
     tableid = db.Column(db.Integer, db.ForeignKey('tables.id'))
     slotid = db.Column(db.Integer, db.ForeignKey('slots.id'))

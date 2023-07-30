@@ -1,0 +1,6 @@
+{% extends 'staffbase.jinja' %}
+{% block content %}
+{% for booking in bookings %}
+{{ booking.booking_name }}
+{% endfor %}
+{% endblock content %}
