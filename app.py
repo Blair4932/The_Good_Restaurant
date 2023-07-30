@@ -4,14 +4,12 @@ from flask_migrate import Migrate
 
 app = Flask(__name__)
 
-app.config["SQLALCHEMY_DATABASE_URI"] = "postgresql://blairscott@localhost:4999/good_restaurant"
+app.config["SQLALCHEMY_DATABASE_URI"] = "postgresql://blairscott@localhost:5432/good_restaurant2"
 app.config["SQLALCHEMY_ECHO"] = True
 db = SQLAlchemy(app)
 migrate = Migrate(app, db)
-from seed import seed
-app.cli.add_command(seed)
 
-from models import Table, Booking, Slot
+from models import Slot, Table, Booking
 from controllers.resaurant_controller import restaurant_blueprint
 
 app.register_blueprint(restaurant_blueprint)

@@ -5,7 +5,7 @@
         <div class="book__wrapper">
             <div class="book__left">
                 <h1 class="book__title">Book Here</h1>
-                <form>
+                <form class="book-table">
                     <input type="text" name="booking_name" id="booking_name" placeholder="Booking Name" required>
                     <input type="number" name="number_of_guests" id="number_of_guests" placeholder="Num of Guests"
                         required max="10" min="1">
@@ -13,13 +13,9 @@
                     <input type="date" name="date" id="date" placeholder="date" required>
                     <h2 class="book__title select_slot">Select Time</h2>
                     <select name="slots" id="slots" multiple>
-                        <option value="1">5:30pm</option>
-                        <option value="2">6pm</option>
-                        <option value="3">6:30pm</option>
-                        <option value="4">7pm</option>
-                        <option value="5">7:30pm</option>
-                        <option value="6">8pm</option>
-                        <option value="7">8:30pm</option>
+                        {% for slot in slots %}
+                        <option value="1">{{ slot.start_time }}</option>
+                        {% endfor %}
                     </select>
                     <input class="submit-btn" type="submit" name="place_booking" id="place_booking"
                         value="Place Booking">

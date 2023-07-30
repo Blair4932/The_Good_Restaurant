@@ -15,3 +15,20 @@ class Booking(db.Model):
 
     def __repr__(self):
         return f'<Booking {self.id}: {self.booking_name}>'
+
+class Slot(db.Model):
+
+    __tablename__ = 'slots'
+
+    id = db.Column(db.Integer, primary_key=True)
+    start_time = db.Column(db.String(7))
+    end_time = db.Column(db.String(7))
+
+class Table(db.Model):
+    __tablename__= "tables"
+
+    id = db.Column(db.Integer, primary_key=True)
+    seats = db.Column(db.String(64))
+
+    def __repr__(self):
+        return f'<Table {self.id}: {self.name}>'
