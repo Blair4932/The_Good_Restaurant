@@ -3,7 +3,6 @@
 - Allow both Customer and Staff to create a booking for an available table
 - Allow Staff to view, amend and delete a Customer's booking
 - Set a table/booking capacity for the restaurant that blocks a customer from booking when capacity has been reached
-- Staff should be able to change whether the booking is confirmed: True/False
 
 ## Extensions
 

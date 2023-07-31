@@ -25,7 +25,9 @@
         <aside class="staff-side-bar">
             <div class="staff-side-bar__wrapper">
                 <ul class="staff-side-bar__content">
-                    <li class="staff-side-bar__title">Bookings</li>
+                    <a href="/the_good_restaurant/bookings">
+                        <li class="staff-side-bar__title">Bookings</li>
+                    </a>
                     <li class="staff-side-bar__title">View Users</li>
                     <li class="staff-side-bar__title">Add Booking</li>
                 </ul>
@@ -46,8 +48,9 @@
                             <li class="bookings-view__content--titles">Number of Guests: <span
                                     class="bookings-view__content--titles--not-bold"><em>{{ booking.number_of_guests
                                         }}</em></span></li>
-                            <li class="bookings-view__content--titles">Tel: <span
-                                    class="bookings-view__content--titles--not-bold"><em>{{ booking.phone_number
+                            <li class="bookings-view__content--titles">Date: <span
+                                    class="bookings-view__content--titles--not-bold"><em>{{
+                                        booking.booking_date.strftime("%d/%m/%Y")
                                         }}</em></span></li>
                         </ul>
                     </a>

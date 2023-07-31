@@ -232,6 +232,8 @@ select {
     width: 200px;
     height: 520px;
     border-right: black 2px solid;
+    border-bottom: black 2px solid;
+    border-left: black 2px solid;
 }
 
 .staff-side-bar__content {
@@ -272,7 +274,7 @@ select {
 }
 
 .bookings-view__titles--title {
-    margin: 30px;
+    margin:30px 30px 7px 30px;
     color: rgb(43, 43, 43);
     font-family: Palatino, URW Palladio L, serif;
     text-decoration: underline;
@@ -306,7 +308,7 @@ select {
     margin: 0px 10px;
     border-radius: 5px;
     border: rgb(141, 141, 141) 3px solid;
-    box-shadow: rgb(146, 146, 146) 7px 5px 10px;
+    box-shadow: rgb(64, 88, 113) 7px 5px 10px;
     
 }
 
@@ -318,11 +320,91 @@ select {
 .bookings-view__booking:hover {
     cursor: pointer;
     background-color: rgb(196, 196, 196);
-    box-shadow: rgb(118, 118, 118) 7px 5px 10px
+    box-shadow: rgb(41, 64, 97) 7px 5px 10px
 }
 
 .bookings-view__booking:active {
     cursor: pointer;
     background-color: rgb(152, 152, 152);
-    box-shadow: rgb(31, 31, 31) 7px 5px 10px
+    box-shadow: rgb(0, 0, 0)39 7px 5px 10px;
+}
+
+.bookings-view__p {
+    margin-left: 30px;
+    font-family: Palatino, URW Palladio L, serif;;
+}
+
+.bookings-view__details__box {
+    background-color: rgb(221, 221, 221);
+    border: rgb(51, 51, 51) 2px solid;
+    margin-top: 60px;
+    margin-left: 30px;
+    width: 400px;
+    height: 270px;
+}
+
+.details__box__title {
+    margin: 15px 0px 10px 10px;
+    font-family: Palatino, URW Palladio L, serif;
+    font-weight: 5000;
+}
+
+.details__box__item {
+    margin-left: 10px;
+    background-color: rgb(184, 184, 184);
+    width: 300px;
+    margin-top: 10px;
+    padding: 2px;
+}
+
+.staff-body {
+    background-color: rgb(122, 151, 206);
+}
+
+.bookings-view__details__box__wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+.delete-btn {
+    background-color: rgb(151, 51, 51);
+    color: white;
+    border: none;
+    padding: 5px;
+    border-radius: 3px;
+    margin-left: 10px;
+    margin-top: 10px;
+}
+
+.delete-btn:hover {
+    background-color: rgb(143, 74, 74);
+    cursor: pointer;
+}
+
+.delete-btn:active {
+    background-color: rgb(120, 24, 24);
+}
+
+.booking-buttons {
+    display: flex;
+}
+
+.amend-btn {
+    background-color: rgb(60, 78, 192);
+    color: white;
+    border: none;
+    padding: 5px;
+    border-radius: 3px;
+    margin-left: 10px;
+    margin-top: 10px;
+}
+
+.confirm-btn {
+    background-color: rgb(39, 123, 46);
+    color: white;
+    border: none;
+    padding: 5px;
+    border-radius: 3px;
+    margin-left: 10px;
+    margin-top: 10px;
 }
