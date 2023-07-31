@@ -38,7 +38,7 @@
                 </div>
                 <div class="bookings-view__content">
                     {% for booking in bookings %}
-                    <a class="booking-card-link" href="/the_good_restaurant/show_booking/">
+                    <a class="booking-card-link" href="/the_good_restaurant/show_booking/{{booking.id}}">
                         <ul class="bookings-view__booking">
                             <li class="bookings-view__content--titles">Name: <span
                                     class="bookings-view__content--titles--not-bold"><em>{{ booking.booking_name
