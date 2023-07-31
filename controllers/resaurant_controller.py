@@ -36,3 +36,8 @@ def create_booking():
     db.session.add(booking)
     db.session.commit()
     return render_template('/customer_view/booking_confirmed.jinja')
+
+@restaurant_blueprint.route("/the_good_restaurant/show_booking/<id>")
+def show_booking(id):
+    booking = Booking.query.get(id)
+    return render_template('/staff-view/show_booking.jinja', booking=booking)

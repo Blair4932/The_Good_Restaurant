@@ -1,6 +1,59 @@
-{% extends 'staffbase.jinja' %}
-{% block content %}
-{% for booking in bookings %}
-{{ booking.booking_name }}
-{% endfor %}
-{% endblock content %}
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Good Restaurant</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+
+<body class="staff-body">
+    <header class="staff-header">
+        <div class="staff-header__wrapper">
+            <div class="staff-logo">
+                <span>T.G.R</span>
+                <p class="staff-logo__text">Staff</p>
+            </div>
+            <ul>
+                <li>
+                    <div class="logout">
+                        <a href="/the_good_restaurant/home">Logout</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </header>
+    <div class="staff-view__content">
+        <aside class="staff-side-bar">
+            <div class="staff-side-bar__wrapper">
+                <ul class="staff-side-bar__content">
+                    <li class="staff-side-bar__title">Bookings</li>
+                    <li class="staff-side-bar__title">View Users</li>
+                    <li class="staff-side-bar__title">Add Booking</li>
+                </ul>
+            </div>
+        </aside>
+        <main class="bookings-view">
+            <section class="bookings-view__wrapper">
+                <div class="bookings-view__titles">
+                    <h2 class="bookings-view__titles--title">Bookings:</h2>
+                </div>
+                <div class="bookings-view__content">
+                    {% for booking in bookings %}
+                    <a class="booking-card-link" href="/the_good_restaurant/show_booking">
+                        <ul class="bookings-view__booking">
+                            <li class="bookings-view__content--titles">Name: <span
+                                    class="bookings-view__content--titles--not-bold"><em>{{ booking.booking_name
+                                        }}</em></span></li>
+                            <li class="bookings-view__content--titles">Number of Guests: <span
+                                    class="bookings-view__content--titles--not-bold"><em>{{ booking.number_of_guests
+                                        }}</em></span></li>
+                            <li class="bookings-view__content--titles">Tel: <span
+                                    class="bookings-view__content--titles--not-bold"><em>{{ booking.phone_number
+                                        }}</em></span></li>
+                        </ul>
+                    </a>
+                    {% endfor %}
+                </div>
+            </section>
+        </main>
+    </div>
+</body>
