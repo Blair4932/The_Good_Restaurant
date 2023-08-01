@@ -13,9 +13,9 @@
                         required max="10" min="1">
                     <input type="date" name="date" id="date" placeholder="date" required>
                     <h2 class="book__title select_slot">Select Time</h2>
-                    <select name="slots" id="slots" multiple>
+                    <select name="slot" id="slots">
                         {% for slot in slots %}
-                        <option name="slot" id="slot" value="{{slot.id}}">{{ slot.start_time }}</option>
+                        <option value="{{slot.id}}">{{ slot.start_time }}</option>
                         {% endfor %}
                     </select>
                     <input class="submit-btn" type="submit" name="place_booking" id="place_booking"

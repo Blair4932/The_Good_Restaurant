@@ -13,6 +13,7 @@ class Booking(db.Model):
     tableid = db.Column(db.Integer, db.ForeignKey('tables.id'))
     slotid = db.Column(db.Integer, db.ForeignKey('slots.id'))
 
+
     def __repr__(self):
         return f'<Booking {self.id}: {self.booking_name}>'
 
@@ -23,6 +24,7 @@ class Slot(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     start_time = db.Column(db.String(7))
     end_time = db.Column(db.String(7))
+    bookings = db.relationship('Booking', backref="slot")
 
 class Table(db.Model):
     __tablename__= "tables"

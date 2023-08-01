@@ -273,6 +273,12 @@ select {
     display: flex;
 }
 
+.bookings-view__content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
 .bookings-view__titles--title {
     margin:30px 30px 7px 30px;
     color: rgb(43, 43, 43);

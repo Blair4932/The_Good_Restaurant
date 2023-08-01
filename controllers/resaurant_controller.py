@@ -27,13 +27,18 @@ def show_bookings():
 
 @restaurant_blueprint.route("/the_good_restaurant/book", methods=['POST'])
 def create_booking():
+    bookings = Booking.query.all()
     booking_name = request.form['booking_name']
     email = request.form['email']
     phone_number = request.form['phone_number']
     number_of_guests = request.form['number_of_guests']
     date = request.form['date']
     slot = request.form['slot']
-    booking = Booking(booking_name=booking_name, email=email, phone_number=phone_number, booking_date=date, number_of_guests=number_of_guests, slot=slot)
+    for booking in bookings: 
+        if slot == booking.slotid and date == booking.booking_date:
+            return render_template('/the_good_restaurant/home')
+    else:
+        booking = Booking(booking_name=booking_name, email=email, phone_number=phone_number, booking_date=date, number_of_guests=number_of_guests, slotid=slot)
     db.session.add(booking)
     db.session.commit()
     return render_template('/customer_view/booking_confirmed.jinja')
