@@ -32,3 +32,4 @@ class Table(db.Model):
 
     def __repr__(self):
         return f'<Table {self.id}: {self.name}>'
+    

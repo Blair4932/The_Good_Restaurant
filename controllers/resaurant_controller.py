@@ -32,7 +32,8 @@ def create_booking():
     phone_number = request.form['phone_number']
     number_of_guests = request.form['number_of_guests']
     date = request.form['date']
-    booking = Booking(booking_name=booking_name, email=email, phone_number=phone_number, booking_date=date, number_of_guests=number_of_guests)
+    slot = request.form['slot']
+    booking = Booking(booking_name=booking_name, email=email, phone_number=phone_number, booking_date=date, number_of_guests=number_of_guests, slot=slot)
     db.session.add(booking)
     db.session.commit()
     return render_template('/customer_view/booking_confirmed.jinja')
@@ -41,3 +42,34 @@ def create_booking():
 def show_booking(id):
     booking = Booking.query.get(id)
     return render_template('/staff-view/show_booking.jinja', booking=booking, id=id)
+
+@restaurant_blueprint.route("/the_good_restaurant/show_booking/<id>/delete", methods=['POST']) 
+def delete_booking(id):
+    booking = Booking.query.get(id)
+    db.session.delete(booking)
+    db.session.commit()
+    return redirect('/the_good_restaurant/bookings')
+
+@restaurant_blueprint.route('/the_good_restaurant/<id>/edit')
+def show_edit(id):
+    booking = Booking.query.get(id)
+    slots = Slot.query.all()
+    return render_template('/staff-view/edit.jinja', slots=slots, booking=booking, id=id)
+
+@restaurant_blueprint.route('/the_good_restaurant/<id>/edit', methods=['POST'])
+def update_booking(id):
+    booking_name = request.form['booking_name']
+    email = request.form['email']
+    number_of_guests = request.form['number_of_guests']
+    phone_number = request.form['phone_number']
+    date = request.form['date']
+    
+    booking = Booking.query.get(id)
+    booking.booking_name = booking_name
+    booking.email = email
+    booking.number_of_guests = number_of_guests
+    booking.phone_number = phone_number
+    booking.date = date
+    
+    db.session.commit()
+    return redirect('/the_good_restaurant/bookings')

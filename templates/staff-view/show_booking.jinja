@@ -29,7 +29,9 @@
                         <li class="staff-side-bar__title">Bookings</li>
                     </a>
                     <li class="staff-side-bar__title">View Customers</li>
-                    <li class="staff-side-bar__title">Add Booking</li>
+                    <a href="/the_good_restaurant/book">
+                        <li class="staff-side-bar__title">Add Booking</li>
+                    </a>
                 </ul>
             </div>
         </aside>
@@ -60,15 +62,17 @@
                             <li class="details__box__item"><span style="font-weight: bolder;">TableID: </span>{{
                                 booking.tableid }}</li>
                             <div class="booking-buttons">
-                                <li><span style="font-weight: bolder;"><button class="delete-btn">Delete
-                                            Booking</button>
-                                </li>
-                                <li><span style="font-weight: bolder;"><button class="amend-btn">Amend Booking</button>
-                                </li>
-                                </li>
-                                <li><span style="font-weight: bolder;"><button class="confirm-btn">Confirm
-                                            Booking</button>
-                                </li>
+                                <form action="/the_good_restaurant/show_booking/{{booking.id}}/delete" method="post">
+                                    <li><span style="font-weight: bolder;"><button type="submit"
+                                                class="delete-btn">Delete
+                                                Booking</button>
+                                    </li>
+                                </form>
+                                <a href="/the_good_restaurant/{{booking.id}}/edit">
+                                    <li><span style="font-weight: bolder;"><button class="amend-btn">Amend
+                                                Booking</button>
+                                    </li>
+                                </a>
                             </div>
                         </ul>
                     </div>

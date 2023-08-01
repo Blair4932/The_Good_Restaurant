@@ -15,7 +15,7 @@
                     <h2 class="book__title select_slot">Select Time</h2>
                     <select name="slots" id="slots" multiple>
                         {% for slot in slots %}
-                        <option>{{ slot.start_time }}</option>
+                        <option name="slot" id="slot" value="{{slot.id}}">{{ slot.start_time }}</option>
                         {% endfor %}
                     </select>
                     <input class="submit-btn" type="submit" name="place_booking" id="place_booking"
