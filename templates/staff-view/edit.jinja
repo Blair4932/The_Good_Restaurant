@@ -35,18 +35,22 @@
                 </ul>
             </div>
         </aside>
-        <form class="book-table" method="POST">
-            <input type="text" name="booking_name" id="booking_name" placeholder="Booking Name" required>
-            <input type="email" name="email" id="email" placeholder="Email" required>
-            <input type="text" name="phone_number" placeholder="Phone Number" required>
-            <input type="number" name="number_of_guests" id="number_of_guests" placeholder="Num of Guests" required
-                max="10" min="1">
-            <input type="date" name="date" id="date" placeholder="date" required>
-            <h2 class="book__title select_slot">Select Time</h2>
-            <select name="slots" id="slots" multiple>
-                {% for slot in slots %}
-                <option>{{ slot.start_time }}</option>
-                {% endfor %}
-            </select>
-            <input class="submit-btn" type="submit" name="place_booking" id="place_booking" value="Update Booking">
-        </form>
+        <div class="edit__form">
+            <h1 class="edit__form--title">Edit: {{ booking.booking_name }}</h1>
+            <form class="book-table" method="POST">
+                <input type="text" name="booking_name" id="booking_name" placeholder="Booking Name"
+                    value="{{booking.booking_name}}" required>
+                <input type="email" name="email" id="email" placeholder="Email" required>
+                <input type="text" name="phone_number" placeholder="Phone Number" required>
+                <input type="number" name="number_of_guests" id="number_of_guests" placeholder="Number of Guests"
+                    required max="10" min="1">
+                <input type="date" name="date" id="date" placeholder="date" required>
+                <h2 class="book__title select_slot">Select Time</h2>
+                <select class="select_drop" name="slot" id="slots">
+                    {% for slot in slots %}
+                    <option value="{{slot.id}}">{{ slot.start_time }}</option>
+                    {% endfor %}
+                </select>
+                <input class="submit-btn" type="submit" name="place_booking" id="place_booking" value="Update Booking">
+            </form>
+        </div>

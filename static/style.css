@@ -141,7 +141,7 @@ input {
 .book__img {
     height: 250px;
     border: white solid 2px;
-
+    box-shadow:  rgb(188, 125, 7) 20px 0px 20px;
 }
 
 .book__img-container {
@@ -435,4 +435,18 @@ input {
     border-radius: 3px;
     margin-left: 10px;
     margin-top: 10px;
+}
+
+.edit__form {
+    margin-left: 26%;
+    margin-top: 5%;
+}
+
+.edit__form--title {
+    margin-left: 40px;
+    margin-bottom: 20px;
+    font-family: Palatino, URW Palladio L, serif;
+    color: rgb(43, 43, 43) ;
+    font-weight: bolder;
+    text-decoration: underline;
 }
