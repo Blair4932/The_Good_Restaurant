@@ -131,6 +131,13 @@ input {
     margin: 30px 50px 10px 50px;
 }
 
+.book__wrapper--date {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 30px 50px 10px 50px;
+}
+
 .book__img {
     height: 250px;
     border: white solid 2px;
@@ -155,7 +162,17 @@ input {
     color: rgb(188, 125, 7) ;
     font-weight: bolder;
     text-shadow: black 5px 5px 10px;
-    font-size: 30px;
+    font-size: 40px;
+    text-decoration: underline;
+}
+
+.book__title--date {
+    margin-bottom: 20px;
+    font-family: Palatino, URW Palladio L, serif;
+    color: rgb(188, 125, 7) ;
+    font-weight: bolder;
+    text-shadow: black 5px 5px 10px;
+    font-size: 60px;
     text-decoration: underline;
 }
 
@@ -167,9 +184,14 @@ input {
     flex-wrap: wrap;
 }
 
-select {
+.select_drop {
     background-color: transparent;
+    border-radius: 10px;
+    color: white;
+    border: rgb(188, 125, 7) solid 2px;
 }
+
+
 
 #slots {
     height: 44px;

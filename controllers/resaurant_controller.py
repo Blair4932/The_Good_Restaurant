@@ -14,6 +14,18 @@ def show_book():
     bookings = Booking.query.all()
     return render_template('/customer_view/book.jinja', slots=slots, bookings=bookings)
 
+@restaurant_blueprint.route('/the_good_restaurant/book_slot', methods=['POST'])
+def show_book_slot():
+    date = request.form['date']
+    bookings = Booking.query.filter(Booking.booking_date == date)
+    slots=Slot.query.all()
+    available_slots = []
+    for slot in slots:
+        if slot.id not in [booking.slotid for booking in bookings]: 
+            available_slots.append(slot)
+    
+    return render_template('/customer_view/book_slot.jinja', slots=available_slots, date=date)
+
 @restaurant_blueprint.route('/the_good_restaurant/booking-confirmed')
 def booking_confirmed():
     bookings = Booking.query.all()
@@ -35,17 +47,6 @@ def create_booking():
     number_of_guests = request.form['number_of_guests']
     date = request.form['date']
     slot = request.form['slot']
-    # Tried to find tables that are not already booked before this date and slot 
-    # query = db.session.query(Booking)
-    # query = query.filter(Booking.booking_date == date and Booking.slotid == slot and Booking.tableid == Table.id)
-    # print(query)
-
-    # subquery = db.session.query(Booking.tableid)
-    # query = query.filter(~Table.id.in_(subquery)).all()
-    
-    # print(query)
-    open_table = db.session.query.filter(Booking.slotid == slot)
-
     booking = Booking(booking_name=booking_name, email=email, phone_number=phone_number, booking_date=date, number_of_guests=number_of_guests, slotid=slot)
     db.session.add(booking)
     db.session.commit()

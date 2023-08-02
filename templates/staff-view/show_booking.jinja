@@ -39,28 +39,22 @@
             <section class="bookings-view__wrapper">
                 <div class="bookings-view__titles">
                     <h2 class="bookings-view__titles--title">{{ booking.booking_name }}</h2>
-                    <p class="bookings-view__p"><span style="font-weight: bolder;">Booked for:</span> {{
-                        booking.booking_date.strftime("%d/%m/%Y")}}
-                    </p>
-                    <p class="bookings-view__p"><span style="font-weight: bolder;">Tel:</span> {{
-                        booking.phone_number}}
-                    </p>
                 </div>
                 <div class="bookings-view__details__box">
                     <div class="bookings-view__details__box__wrapper">
                         <h2 class="details__box__title">Booking Details</h2>
                         <ul class="bookings-view__details__box__content">
-                            <li class="details__box__item"><span style="font-weight: bolder;">Email: </span>{{
-                                booking.email }}</li>
-                            <li class="details__box__item"><span style="font-weight: bolder;">Number of Guests:
-                                </span>{{
-                                booking.number_of_guests }}</li>
+                            <li class="details__box__item"><span style="font-weight: bolder;">Booked for:</span> {{
+                                booking.booking_date.strftime("%d/%m/%Y")}}</li>
                             <li class="details__box__item"><span style="font-weight: bolder;">Slot: </span>{{
                                 booking.slot.start_time }}</li>
                             <li class="details__box__item"><span style="font-weight: bolder;">Email: </span>{{
                                 booking.email }}</li>
-                            <li class="details__box__item"><span style="font-weight: bolder;">TableID: </span>{{
-                                booking.tableid }}</li>
+                            <li class="details__box__item"><span style="font-weight: bolder;">Tel:</span> {{
+                                booking.phone_number}}</li>
+                            <li class="details__box__item"><span style="font-weight: bolder;">Number of Guests:
+                                </span>{{
+                                booking.number_of_guests }}</li>
                             <div class="booking-buttons">
                                 <form action="/the_good_restaurant/show_booking/{{booking.id}}/delete" method="post">
                                     <li><span style="font-weight: bolder;"><button type="submit"

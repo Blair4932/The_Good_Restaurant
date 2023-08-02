@@ -1,0 +1,33 @@
+{% extends 'base.jinja' %}
+{% block content %}
+<main class="book">
+    <section class="book__content">
+        <div class="book__wrapper">
+            <div class="book__left">
+                <h1 class="book__title">Book Here</h1>
+                <form action="/the_good_restaurant/book" class="book-table" method="POST">
+                    <input type="text" name="booking_name" id="booking_name" placeholder="Booking Name" required>
+                    <input type="email" name="email" id="email" placeholder="Email" required>
+                    <input type="text" name="phone_number" placeholder="Phone Number" required>
+                    <input type="number" name="number_of_guests" id="number_of_guests" placeholder="Num of Guests"
+                        required max="10" min="1">
+                    <input type="hidden" name="date" id="date" value="{{date}}" required>
+                    <h2 class=" book__title select_slot">Select Time</h2>
+                    <select class="select_drop" name="slot" id="slots">
+                        {% for slot in slots %}
+                        <option value="{{slot.id}}">{{ slot.start_time }}</option>
+                        {% endfor %}
+                    </select>
+                    <input class="submit-btn" type="submit" name="place_booking" id="place_booking"
+                        value="Place Booking">
+                </form>
+            </div>
+            <div class="book__img-container">
+                <img class="book__img"
+                    src="https://cdn.discordapp.com/attachments/931859564863823882/1134853447158616124/Restaurant.jpg">
+                <p class="book__img__text">-Our main dining room, built in 1602</p>
+            </div>
+        </div>
+    </section>
+</main>
+{% endblock content %}

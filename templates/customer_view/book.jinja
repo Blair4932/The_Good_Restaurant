@@ -2,24 +2,13 @@
 {% block content %}
 <main class="book">
     <section class="book__content">
-        <div class="book__wrapper">
+        <div class="book__wrapper--date">
             <div class="book__left">
-                <h1 class="book__title">Book Here</h1>
-                <form class="book-table" method="POST">
-                    <input type="text" name="booking_name" id="booking_name" placeholder="Booking Name" required>
-                    <input type="email" name="email" id="email" placeholder="Email" required>
-                    <input type="text" name="phone_number" placeholder="Phone Number" required>
-                    <input type="number" name="number_of_guests" id="number_of_guests" placeholder="Num of Guests"
-                        required max="10" min="1">
+                <h1 class="book__title--date">Select Date</h1>
+                <form action="/the_good_restaurant/book_slot" class="book-table" method="POST">
                     <input type="date" name="date" id="date" placeholder="date" required>
-                    <h2 class="book__title select_slot">Select Time</h2>
-                    <select name="slot" id="slots">
-                        {% for slot in slots %}
-                        <option value="{{slot.id}}">{{ slot.start_time }}</option>
-                        {% endfor %}
-                    </select>
                     <input class="submit-btn" type="submit" name="place_booking" id="place_booking"
-                        value="Place Booking">
+                        value="See Availability ">
                 </form>
             </div>
             <div class="book__img-container">

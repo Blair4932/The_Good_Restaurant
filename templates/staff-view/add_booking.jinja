@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Good Restaurant</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+
+<body class="staff-body">
+    <header class="staff-header">
+        <div class="staff-header__wrapper">
+            <div class="staff-logo">
+                <span>T.G.R</span>
+                <p class="staff-logo__text">Staff</p>
+            </div>
+            <ul>
+                <li>
+                    <div class="logout">
+                        <a href="/the_good_restaurant/home">Logout</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </header>
+    <div class="staff-view__content">
+        <aside class="staff-side-bar">
+            <div class="staff-side-bar__wrapper">
+                <ul class="staff-side-bar__content">
+                    <a href="/the_good_restaurant/bookings">
+                        <li class="staff-side-bar__title">Bookings</li>
+                    </a>
+                    <li class="staff-side-bar__title">View Users</li>
+                    <li class="staff-side-bar__title">Add Booking</li>
+                </ul>
+            </div>
+        </aside>
+        <div class="add-booking">
+            <section class="add-booking__wrapper">
+                <form class="book-table" method="POST">
+                    <input type="text" name="booking_name" id="booking_name" placeholder="Booking Name" required>
+                    <input type="email" name="email" id="email" placeholder="Email" required>
+                    <input type="text" name="phone_number" placeholder="Phone Number" required>
+                    <input type="number" name="number_of_guests" id="number_of_guests" placeholder="Num of Guests"
+                        required max="10" min="1">
+                    <input type="date" name="date" id="date" placeholder="date" required>
+                    <h2 class="book__title select_slot">Select Time</h2>
+                    <select name="slots" id="slots" multiple>
+                        {% for slot in slots %}
+                        <option>{{ slot.start_time }}</option>
+                        {% endfor %}
+                    </select>
+                    <input class="submit-btn" type="submit" name="place_booking" id="place_booking"
+                        value="Place Booking">
+                </form>
+            </section>
+        </div>
