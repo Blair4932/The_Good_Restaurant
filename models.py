@@ -13,10 +13,6 @@ class Booking(db.Model):
     tableid = db.Column(db.Integer, db.ForeignKey('tables.id'))
     slotid = db.Column(db.Integer, db.ForeignKey('slots.id'))
 
-
-    def __repr__(self):
-        return f'<Booking {self.id}: {self.booking_name}>'
-
 class Slot(db.Model):
 
     __tablename__ = 'slots'
@@ -31,7 +27,3 @@ class Table(db.Model):
 
     id = db.Column(db.Integer, primary_key=True)
     seats = db.Column(db.String(64))
-
-    def __repr__(self):
-        return f'<Table {self.id}: {self.name}>'
-    
