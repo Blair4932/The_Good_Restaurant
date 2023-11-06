@@ -4,4 +4,5 @@ The Good Restaurant is my first ever programming project. Made with Python, Flas
 ## How to run the Good Restaurant on your own Computer:
 
 open your terminal
-run the command ```flask run ```
+run the command 
+```flask run ```
