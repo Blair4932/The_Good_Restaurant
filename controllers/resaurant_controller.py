@@ -4,7 +4,7 @@ from models import Booking, Slot, Table
 
 restaurant_blueprint = Blueprint("restaurant", __name__)
 
-@restaurant_blueprint.route('/the_good_restaurant/home')
+@restaurant_blueprint.route('/')
 def index():
     return render_template('index.jinja')
 
